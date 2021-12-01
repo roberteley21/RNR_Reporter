@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">RNR Reporter</string>
+    <string name="app_name">RNR Incident Reporter</string>
     <string name="report_an_incident">Report an Incident</string>
     <string name="injury_report">Injury Report</string>
     <string name="property_damage">Property Damage</string>
     <string name="dangerous_situation">Dangerous Situation</string>
     <string name="copyright_2021_rnr_incident_reporter">Copyright © 2021 RNR Incident Reporter</string>
+    <string name="submit">Submit</string>
 </resources>
