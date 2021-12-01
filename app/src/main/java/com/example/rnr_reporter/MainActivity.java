@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button injury;
+    Button injury, property, dangerous;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,13 +20,34 @@ public class MainActivity extends AppCompatActivity {
         injury.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            switchActivities();
+            switchInjury();
         }
     });
+        property = findViewById(R.id.property);
+        property.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchProperty();
+            }
+        });
+        dangerous = findViewById(R.id.dangerous);
+        dangerous.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchDangerous();
+            }
+        });
 }
-
-    private void switchActivities() {
+    private void switchInjury() {
         Intent switchActivityIntent = new Intent(this, Injury_Report.class);
+        startActivity(switchActivityIntent);
+    }
+    private void switchProperty() {
+        Intent switchActivityIntent = new Intent(this, Property_Damage.class);
+        startActivity(switchActivityIntent);
+    }
+    private void switchDangerous() {
+        Intent switchActivityIntent = new Intent(this, Dangerous_Situation.class);
         startActivity(switchActivityIntent);
     }
 }
