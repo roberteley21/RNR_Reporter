@@ -49,6 +49,24 @@
         app:layout_constraintTop_toBottomOf="@+id/description"
         android:hint="Time/Date"/>
 
+    <Button
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        android:onClick="showTimePickerDialog"
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:onClick="showDatePickerDialog"
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        app:layout_constraintLeft_toRightOf="@+id/time" />
+
     <EditText
         android:id="@+id/location"
         android:layout_marginLeft="15dp"
