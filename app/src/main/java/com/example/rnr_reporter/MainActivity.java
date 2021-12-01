@@ -2,13 +2,31 @@ package com.example.rnr_reporter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
+    Button injury;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        injury = findViewById(R.id.injury);
+        injury.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switchActivities();
+        }
+    });
+}
+
+    private void switchActivities() {
+        Intent switchActivityIntent = new Intent(this, Injury_Report.class);
+        startActivity(switchActivityIntent);
     }
 }
