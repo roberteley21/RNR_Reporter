@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
@@ -11,12 +12,18 @@ import androidx.fragment.app.DialogFragment;
 public class Injury_Report extends AppCompatActivity {
 
     Button submit;
+    EditText name, type, description, location, reporter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.injury_report);
 
+        name = findViewById(R.id.name);
+        type = findViewById(R.id.type);
+        description = findViewById(R.id.description);
+        location =  findViewById(R.id.location);
+        reporter = findViewById(R.id.reporter);
         submit = findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,7 +34,18 @@ public class Injury_Report extends AppCompatActivity {
     }
 
     private void switchSubmit() {
-        Intent switchActivityIntent = new Intent(this, Submission.class);
+        String n, t, d, l, r;
+        n = name.getText().toString();
+        t = type.getText().toString();
+        d = description.getText().toString();
+        l = location.getText().toString();
+        r = reporter.getText().toString();
+        Intent switchActivityIntent = new Intent(this, Summary.class);
+        switchActivityIntent.putExtra("name", n);
+        switchActivityIntent.putExtra("type", t);
+        switchActivityIntent.putExtra("description", d);
+        switchActivityIntent.putExtra("location", l);
+        switchActivityIntent.putExtra("reporter", r);
         startActivity(switchActivityIntent);
     }
 
