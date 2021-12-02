@@ -1,6 +1,14 @@
 package com.example.rnr_reporter.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class form {
+
+    @PrimaryKey
+    public int ID;
+
     private String name;
     private String type;
     private String description;
