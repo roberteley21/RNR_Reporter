@@ -10,5 +10,6 @@
     <color name="sapphire">#0f52ba</color>
     <color name="azure">#0080ff</color>
     <color name="grey">#C6C6C6</color>
+    <color name="grey_2">#a9a9a9</color>
     <color name="ic_launcher_background">#3D7DDC</color>
 </resources>

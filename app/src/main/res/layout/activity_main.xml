@@ -48,9 +48,8 @@
         android:layout_height="wrap_content"
         android:text="@string/injury_report"
         android:backgroundTint="@color/azure"
-        android:layout_marginTop="50dp"
-        tools:layout_editor_absoluteY="401dp"
-        app:layout_constraintTop_toTopOf="@+id/report"/>
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/report"/>
 
     <Button
         android:id="@+id/property"
@@ -60,9 +59,7 @@
         android:layout_height="wrap_content"
         android:text="@string/property_damage"
         android:backgroundTint="@color/azure"
-        android:layout_marginTop="45dp"
-        tools:layout_editor_absoluteY="449dp"
-        app:layout_constraintTop_toTopOf="@+id/injury" />
+        app:layout_constraintTop_toBottomOf="@+id/injury" />
 
     <Button
         android:id="@+id/dangerous"
@@ -72,9 +69,7 @@
         android:layout_height="wrap_content"
         android:text="@string/dangerous_situation"
         android:backgroundTint="@color/azure"
-        android:layout_marginTop="45dp"
-        tools:layout_editor_absoluteY="497dp"
-        app:layout_constraintTop_toTopOf="@+id/property"/>
+        app:layout_constraintTop_toBottomOf="@+id/property"/>
 
     <View
         android:id="@+id/line2"
