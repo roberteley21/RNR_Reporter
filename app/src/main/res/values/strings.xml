@@ -15,4 +15,5 @@
     <string name="type_of_damage">Type of Damage</string>
     <string name="type_of_situation">Type of Situation</string>
     <string name="ok">OK</string>
+    <string name="name_of_damage">Name of Damage</string>
 </resources>
