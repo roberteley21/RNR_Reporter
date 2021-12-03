@@ -9,7 +9,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
-public class Dangerous_Situation extends AppCompatActivity {
+public class  Dangerous_Situation extends AppCompatActivity {
 
     Button submit;
     EditText name, type, description, location, reporter;

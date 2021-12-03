@@ -1,27 +1,27 @@
-package com.example.rnr_reporter.model;
+package com.example.rnr_reporter.Entities;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class form {
+public class propertyForm {
 
     @PrimaryKey
     public int ID;
 
-    private String name;
-    private String type;
-    private String description;
-    private String time;
-    private String location;
-    private String reporter;
+    public String propertyDamaged;
+    public String type;
+    public String description;
+    public String time;
+    public String location;
+    public String reporter;
     private boolean selected;
 
-    public form() { this.selected = false; }
+    public propertyForm() { selected = false; }
 
-    public void setName(String p_name) { this.name = p_name; }
+    public void setPropertyDamaged(String p_propertyDamaged) { this.propertyDamaged = p_propertyDamaged; }
 
-    public String getName() { return this.name; }
+    public String getPropertyDamaged() { return this.propertyDamaged; }
 
     public void setType(String p_type) { this.type = p_type; }
 
