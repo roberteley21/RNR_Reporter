@@ -1,4 +1,4 @@
-package com.example.rnr_reporter;
+package com.example.rnr_reporter.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,13 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
-public class  Dangerous_Situation extends AppCompatActivity {
+import com.example.rnr_reporter.Activities.SummaryActivity;
+import com.example.rnr_reporter.DatePicker;
+import com.example.rnr_reporter.R;
+import com.example.rnr_reporter.TimePicker;
+import com.example.rnr_reporter.formType;
+
+public class PropertyDamageActivity extends AppCompatActivity {
 
     Button submit, time, date;
     EditText name, type, description, location, reporter;
@@ -18,7 +24,7 @@ public class  Dangerous_Situation extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dangerous_situation);
+        setContentView(R.layout.property_damage);
 
         name = findViewById(R.id.name);
         type = findViewById(R.id.type);
@@ -45,6 +51,7 @@ public class  Dangerous_Situation extends AppCompatActivity {
         r = reporter.getText().toString();
         tm = time.getText().toString();
         dt = date.getText().toString();
+        formType form = formType.DAMAGE;
         if (TextUtils.isEmpty(name.getText())){
             name.setError("Name is required");
         }
@@ -61,7 +68,7 @@ public class  Dangerous_Situation extends AppCompatActivity {
             reporter.setError("Reporter is required");
         }
         else {
-            Intent switchActivityIntent = new Intent(this, Summary.class);
+            Intent switchActivityIntent = new Intent(this, SummaryActivity.class);
             switchActivityIntent.putExtra("name", n);
             switchActivityIntent.putExtra("type", t);
             switchActivityIntent.putExtra("description", d);
@@ -69,6 +76,7 @@ public class  Dangerous_Situation extends AppCompatActivity {
             switchActivityIntent.putExtra("reporter", r);
             switchActivityIntent.putExtra("time", tm);
             switchActivityIntent.putExtra("date", dt);
+            switchActivityIntent.putExtra("form", form);
             startActivity(switchActivityIntent);
         }
     }

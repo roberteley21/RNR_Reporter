@@ -1,4 +1,4 @@
-package com.example.rnr_reporter;
+package com.example.rnr_reporter.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.rnr_reporter.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             switchInjury();
         }
+
     });
         property = findViewById(R.id.property);
         property.setOnClickListener(new View.OnClickListener() {
@@ -39,15 +42,15 @@ public class MainActivity extends AppCompatActivity {
         });
 }
     private void switchInjury() {
-        Intent switchActivityIntent = new Intent(this, Injury_Report.class);
+        Intent switchActivityIntent = new Intent(this, InjuryReportActivity.class);
         startActivity(switchActivityIntent);
     }
     private void switchProperty() {
-        Intent switchActivityIntent = new Intent(this, Property_Damage.class);
+        Intent switchActivityIntent = new Intent(this, PropertyDamageActivity.class);
         startActivity(switchActivityIntent);
     }
     private void switchDangerous() {
-        Intent switchActivityIntent = new Intent(this, Dangerous_Situation.class);
+        Intent switchActivityIntent = new Intent(this, DangerousSituationActivity.class);
         startActivity(switchActivityIntent);
     }
 }

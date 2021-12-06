@@ -4,33 +4,28 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class injuryForm {
+public class situationForm {
 
     @PrimaryKey(autoGenerate = true)
     public int ID;
 
-    private String name;
-    private String type;
-    private String description;
-    private String time;
-    private String location;
-    private String reporter;
+    public String type;
+    public String description;
+    public String time;
+    public String location;
+    public String reporter;
     private boolean selected;
 
-    public injuryForm() { this.selected = false; }
+    public situationForm() { selected = false; }
 
-    public injuryForm(String p_name, String p_type, String p_description, String p_time, String p_location, String p_reporter){
-        this.name = p_name;
+    public situationForm(String p_type, String p_description, String p_time, String p_location, String p_reporter){
         this.type = p_type;
         this.description = p_description;
         this.time = p_time;
-        this.location = p_location;this.reporter = p_reporter;
+        this.location = p_location;
+        this.reporter = p_reporter;
         this.selected = false;
     }
-
-    public void setName(String p_name) { this.name = p_name; }
-
-    public String getName() { return this.name; }
 
     public void setType(String p_type) { this.type = p_type; }
 

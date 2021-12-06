@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RNRReporter">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Injury_Report"
+            android:name=".Activities.InjuryReportActivity"
             android:label="Injury Report"
             android:exported="true">
             <intent-filter>
@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Property_Damage"
+            android:name=".Activities.PropertyDamageActivity"
             android:label="Property Damage"
             android:exported="true">
             <intent-filter>
@@ -39,7 +39,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Dangerous_Situation"
+            android:name=".Activities.DangerousSituationActivity"
             android:label="Dangerous Situation"
             android:exported="true">
             <intent-filter>
@@ -49,7 +49,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Summary"
+            android:name=".Activities.SummaryActivity"
             android:label="Summary"
             android:exported="true">
             <intent-filter>
@@ -59,7 +59,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Submission"
+            android:name=".Activities.SubmissionActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package com.example.rnr_reporter;
+package com.example.rnr_reporter.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,12 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
-public class Injury_Report extends AppCompatActivity {
+import com.example.rnr_reporter.DatePicker;
+import com.example.rnr_reporter.R;
+import com.example.rnr_reporter.TimePicker;
+import com.example.rnr_reporter.formType;
+
+public class DangerousSituationActivity extends AppCompatActivity {
 
     Button submit, time, date;
     EditText name, type, description, location, reporter;
@@ -18,7 +23,7 @@ public class Injury_Report extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.injury_report);
+        setContentView(R.layout.dangerous_situation);
 
         name = findViewById(R.id.name);
         type = findViewById(R.id.type);
@@ -45,6 +50,7 @@ public class Injury_Report extends AppCompatActivity {
         r = reporter.getText().toString();
         tm = time.getText().toString();
         dt = date.getText().toString();
+        formType form = formType.SITUATION;
         if (TextUtils.isEmpty(name.getText())){
             name.setError("Name is required");
         }
@@ -61,7 +67,7 @@ public class Injury_Report extends AppCompatActivity {
             reporter.setError("Reporter is required");
         }
         else {
-            Intent switchActivityIntent = new Intent(this, Summary.class);
+            Intent switchActivityIntent = new Intent(this, SummaryActivity.class);
             switchActivityIntent.putExtra("name", n);
             switchActivityIntent.putExtra("type", t);
             switchActivityIntent.putExtra("description", d);
@@ -69,6 +75,7 @@ public class Injury_Report extends AppCompatActivity {
             switchActivityIntent.putExtra("reporter", r);
             switchActivityIntent.putExtra("time", tm);
             switchActivityIntent.putExtra("date", dt);
+            switchActivityIntent.putExtra("form", form);
             startActivity(switchActivityIntent);
         }
     }

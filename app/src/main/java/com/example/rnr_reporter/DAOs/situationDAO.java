@@ -5,15 +5,15 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.example.rnr_reporter.Entities.injuryForm;
+import com.example.rnr_reporter.Entities.situationForm;
 
 import java.util.List;
 
 @Dao
-public interface injuryDAO {
+public interface situationDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public void insertInjury(injuryForm injuryForm);
+    public void insertSituation(situationForm situationForm);
 
     @Query("SELECT * FROM injuryForm")
-    List<injuryForm> getAll();
+    List<situationForm> getAll();
 }
