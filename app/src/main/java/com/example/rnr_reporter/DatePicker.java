@@ -3,6 +3,7 @@ package com.example.rnr_reporter;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.fragment.app.DialogFragment;
 
@@ -23,13 +24,11 @@ public class DatePicker extends DialogFragment
         return new DatePickerDialog(getActivity(), this, year, month, day);
     }
 
-    public void onDateSet(DatePicker view, int year, int month, int day) {
-        // Do something with the date chosen by the user
-    }
-
     @Override
     public void onDateSet(android.widget.DatePicker view, int year, int month, int dayOfMonth) {
-
+        String date = month+1+"/"+dayOfMonth+"/"+year;
+        Button datePicker = (Button)getActivity().findViewById(R.id.date);
+        datePicker.setText(date);
     }
 }
 

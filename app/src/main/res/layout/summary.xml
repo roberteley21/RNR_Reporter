@@ -43,31 +43,31 @@
         android:text="@string/description"
         android:textSize="20sp"/>
 
-    <Button
+    <TextView
         android:id="@+id/time"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Time"
-        android:onClick="showTimePickerDialog"
-        app:layout_constraintTop_toBottomOf="@+id/description"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="200dp"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/grey_2"/>
-
-    <Button
-        android:id="@+id/date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Date"
-        android:onClick="showDatePickerDialog"
-        app:layout_constraintTop_toBottomOf="@+id/description"
-        app:layout_constraintLeft_toRightOf="@+id/time"
-        android:layout_marginLeft="200dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="10dp"
-        android:backgroundTint="@color/grey_2"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        android:text="Time"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time"
+        android:text="Date"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/location"
@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/time"
+        app:layout_constraintTop_toBottomOf="@+id/date"
         android:text="@string/location"
         android:textSize="20sp"/>
 
