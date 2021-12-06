@@ -1,4 +1,4 @@
-package com.example.rnr_reporter;
+package com.example.rnr_reporter.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,13 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
-public class Injury_Report extends AppCompatActivity {
+import com.example.rnr_reporter.Activities.SummaryActivity;
+import com.example.rnr_reporter.DatePicker;
+import com.example.rnr_reporter.R;
+import com.example.rnr_reporter.TimePicker;
+import com.example.rnr_reporter.formType;
+
+public class InjuryReportActivity extends AppCompatActivity {
 
     Button submit;
     EditText name, type, description, location, reporter;
@@ -40,12 +46,15 @@ public class Injury_Report extends AppCompatActivity {
         d = description.getText().toString();
         l = location.getText().toString();
         r = reporter.getText().toString();
-        Intent switchActivityIntent = new Intent(this, Summary.class);
+        formType form = formType.INJURY;
+        Intent switchActivityIntent = new Intent(this, SummaryActivity.class);
+
         switchActivityIntent.putExtra("name", n);
         switchActivityIntent.putExtra("type", t);
         switchActivityIntent.putExtra("description", d);
         switchActivityIntent.putExtra("location", l);
         switchActivityIntent.putExtra("reporter", r);
+        switchActivityIntent.putExtra("form", form);
         startActivity(switchActivityIntent);
     }
 

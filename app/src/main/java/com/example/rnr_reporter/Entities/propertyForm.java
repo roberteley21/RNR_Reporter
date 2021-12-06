@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey;
 @Entity
 public class propertyForm {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     public int ID;
 
     public String propertyDamaged;
@@ -18,6 +18,16 @@ public class propertyForm {
     private boolean selected;
 
     public propertyForm() { selected = false; }
+
+    public propertyForm(String p_name, String p_type, String p_description, String p_time, String p_location, String p_reporter){
+        this.propertyDamaged = p_name;
+        this.type = p_type;
+        this.description = p_description;
+        this.time = p_time;
+        this.location = p_location;
+        this.reporter = p_reporter;
+        this.selected = false;
+    }
 
     public void setPropertyDamaged(String p_propertyDamaged) { this.propertyDamaged = p_propertyDamaged; }
 

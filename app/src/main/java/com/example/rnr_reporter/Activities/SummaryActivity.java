@@ -1,4 +1,4 @@
-package com.example.rnr_reporter;
+package com.example.rnr_reporter.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,9 +6,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.rnr_reporter.Entities.injuryForm;
+import com.example.rnr_reporter.Entities.propertyForm;
+import com.example.rnr_reporter.Entities.situationForm;
+import com.example.rnr_reporter.R;
+import com.example.rnr_reporter.dataBase;
+import com.example.rnr_reporter.formType;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Summary extends AppCompatActivity {
+public class SummaryActivity extends AppCompatActivity {
 
     Button submit;
     TextView name, type, description, location, reporter;
@@ -30,23 +37,50 @@ public class Summary extends AppCompatActivity {
         String d = intent.getStringExtra("description");
         String l = intent.getStringExtra("location");
         String r = intent.getStringExtra("reporter");
+        formType form = (formType) intent.getSerializableExtra("form");
         name.setText(n);
         type.setText(t);
         description.setText(d);
         location.setText(l);
         reporter.setText(r);
 
+  /*      try {
+            switch (form) {
+                case INJURY:
+                    try {
+                        dataBase.getDataBase(this).getInjuryDAO().insertInjury(new injuryForm(n, t, d, null, l, r));
+                    } catch(Exception e) {
+                        System.out.println(e);
+                    }
+                    break;
+                case DAMAGE:
+                    dataBase.getDataBase(this).getPropertyDAO().insertProperty(new propertyForm(n, t, d, null, l, r));
+                    break;
+                case SITUATION:
+                    dataBase.getDataBase(this).getSituationDAO().insertSituation(new situationForm(t, d, null, l, r));
+                    break;
+            }
+        } catch(Exception e) {
+            System.out.println(e);
+        } */
+
+      //  Context context = this;
+
         submit = findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 switchSubmit();
             }
         });
     }
 
     private void switchSubmit() {
-        Intent switchActivityIntent = new Intent(this, Submission.class);
+        Intent switchActivityIntent = new Intent(this, SubmissionActivity.class);
         startActivity(switchActivityIntent);
     }
+
+
+
 }

@@ -1,4 +1,4 @@
-package com.example.rnr_reporter;
+package com.example.rnr_reporter.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,10 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Submission extends AppCompatActivity {
+import com.example.rnr_reporter.Activities.MainActivity;
+import com.example.rnr_reporter.R;
+
+public class SubmissionActivity extends AppCompatActivity {
 
     Button submit;
 

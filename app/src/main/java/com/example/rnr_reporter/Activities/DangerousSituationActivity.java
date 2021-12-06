@@ -1,4 +1,4 @@
-package com.example.rnr_reporter;
+package com.example.rnr_reporter.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,12 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
-public class  Dangerous_Situation extends AppCompatActivity {
+import com.example.rnr_reporter.DatePicker;
+import com.example.rnr_reporter.R;
+import com.example.rnr_reporter.TimePicker;
+import com.example.rnr_reporter.formType;
+
+public class DangerousSituationActivity extends AppCompatActivity {
 
     Button submit;
     EditText name, type, description, location, reporter;
@@ -19,7 +24,7 @@ public class  Dangerous_Situation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dangerous_situation);
 
-        name = findViewById(R.id.name);
+       // name = findViewById(R.id.name);
         type = findViewById(R.id.type);
         description = findViewById(R.id.description);
         location =  findViewById(R.id.location);
@@ -35,17 +40,19 @@ public class  Dangerous_Situation extends AppCompatActivity {
 
     private void switchSubmit() {
         String n, t, d, l, r;
-        n = name.getText().toString();
+        n = null;//name.getText().toString();
         t = type.getText().toString();
         d = description.getText().toString();
         l = location.getText().toString();
         r = reporter.getText().toString();
-        Intent switchActivityIntent = new Intent(this, Summary.class);
+        formType form = formType.SITUATION;
+        Intent switchActivityIntent = new Intent(this, SummaryActivity.class);
         switchActivityIntent.putExtra("name", n);
         switchActivityIntent.putExtra("type", t);
         switchActivityIntent.putExtra("description", d);
         switchActivityIntent.putExtra("location", l);
         switchActivityIntent.putExtra("reporter", r);
+        switchActivityIntent.putExtra("form", form);
         startActivity(switchActivityIntent);
     }
 
@@ -58,4 +65,5 @@ public class  Dangerous_Situation extends AppCompatActivity {
         DialogFragment newFragment = new DatePicker();
         newFragment.show(getSupportFragmentManager(), "datePicker");
     }
+
 }
