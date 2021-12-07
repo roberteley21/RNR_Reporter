@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/main"
+            android:icon="@drawable/menu"
+            android:title="Main Menu" />
+        <item
+            android:id="@+id/your_reports"
+            android:icon="@drawable/menu"
+            android:title="Your Reports" />
+    </group>
+</menu>

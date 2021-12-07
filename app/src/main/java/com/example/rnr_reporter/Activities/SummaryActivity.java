@@ -14,6 +14,7 @@ import com.example.rnr_reporter.dataBase;
 import com.example.rnr_reporter.formType;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class SummaryActivity extends AppCompatActivity {
 
@@ -24,6 +25,12 @@ public class SummaryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.summary);
+
+        Toolbar toolbar = findViewById(R.id.topAppBar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.arrow);
+        getSupportActionBar().setTitle("Summary");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         name = findViewById(R.id.name);
         type = findViewById(R.id.type);
