@@ -29,7 +29,7 @@ public class SummaryActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.topAppBar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.arrow);
-        getSupportActionBar().setTitle("Injury Report");
+        getSupportActionBar().setTitle("Summary");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         name = findViewById(R.id.name);
