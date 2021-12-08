@@ -1,19 +1,19 @@
-package com.example.rnr_reporter.DAOs;
+package com.example.rnr_reporter.DataBase.DAOs;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.example.rnr_reporter.Entities.situationForm;
+import com.example.rnr_reporter.DataBase.Entities.Situation;
 
 import java.util.List;
 
 @Dao
 public interface situationDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public void insertSituation(situationForm situationForm);
+    public void insertSituation(Situation situationForm);
 
-    @Query("SELECT * FROM injuryForm")
-    List<situationForm> getAll();
+    @Query("SELECT * FROM Injury")
+    List<Situation> getAll();
 }

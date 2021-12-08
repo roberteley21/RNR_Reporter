@@ -1,37 +1,36 @@
-package com.example.rnr_reporter.Entities;
+package com.example.rnr_reporter.DataBase.Entities;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class propertyForm {
+public class Injury {
 
     @PrimaryKey(autoGenerate = true)
     public int ID;
 
-    public String propertyDamaged;
-    public String type;
-    public String description;
-    public String time;
-    public String location;
-    public String reporter;
+    private String name;
+    private String type;
+    private String description;
+    private String time;
+    private String location;
+    private String reporter;
     private boolean selected;
 
-    public propertyForm() { selected = false; }
+    public Injury() { this.selected = false; }
 
-    public propertyForm(String p_name, String p_type, String p_description, String p_time, String p_location, String p_reporter){
-        this.propertyDamaged = p_name;
+    public Injury(String p_name, String p_type, String p_description, String p_time, String p_location, String p_reporter){
+        this.name = p_name;
         this.type = p_type;
         this.description = p_description;
         this.time = p_time;
-        this.location = p_location;
-        this.reporter = p_reporter;
+        this.location = p_location;this.reporter = p_reporter;
         this.selected = false;
     }
 
-    public void setPropertyDamaged(String p_propertyDamaged) { this.propertyDamaged = p_propertyDamaged; }
+    public void setName(String p_name) { this.name = p_name; }
 
-    public String getPropertyDamaged() { return this.propertyDamaged; }
+    public String getName() { return this.name; }
 
     public void setType(String p_type) { this.type = p_type; }
 

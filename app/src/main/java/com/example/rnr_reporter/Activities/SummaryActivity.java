@@ -6,15 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.rnr_reporter.Entities.injuryForm;
-import com.example.rnr_reporter.Entities.propertyForm;
-import com.example.rnr_reporter.Entities.situationForm;
+import com.example.rnr_reporter.DataBase.Entities.Injury;
+import com.example.rnr_reporter.DataBase.Entities.Property;
+import com.example.rnr_reporter.DataBase.Entities.Situation;
 import com.example.rnr_reporter.R;
-import com.example.rnr_reporter.dataBase;
+import com.example.rnr_reporter.DataBase.dataBase;
 import com.example.rnr_reporter.formType;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 public class SummaryActivity extends AppCompatActivity {
 
@@ -25,12 +24,6 @@ public class SummaryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.summary);
-
-        Toolbar toolbar = findViewById(R.id.topAppBar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.arrow);
-        getSupportActionBar().setTitle("Summary");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         name = findViewById(R.id.name);
         type = findViewById(R.id.type);
