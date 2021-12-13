@@ -14,7 +14,7 @@ import androidx.fragment.app.DialogFragment;
 import com.example.rnr_reporter.DatePicker;
 import com.example.rnr_reporter.R;
 import com.example.rnr_reporter.TimePicker;
-import com.example.rnr_reporter.formType;
+import com.example.rnr_reporter.FormType;
 
 public class DangerousSituationActivity extends AppCompatActivity {
 
@@ -57,7 +57,7 @@ public class DangerousSituationActivity extends AppCompatActivity {
         r = reporter.getText().toString();
         tm = time.getText().toString();
         dt = date.getText().toString();
-        formType form = formType.SITUATION;
+        FormType form = FormType.SITUATION;
         if (TextUtils.isEmpty(name.getText())){
             name.setError("Name is required");
         }

@@ -10,21 +10,26 @@ import com.example.rnr_reporter.DataBase.Entities.Injury;
 import com.example.rnr_reporter.DataBase.Entities.Property;
 import com.example.rnr_reporter.DataBase.Entities.Situation;
 import com.example.rnr_reporter.R;
-import com.example.rnr_reporter.DataBase.dataBase;
-import com.example.rnr_reporter.formType;
+import com.example.rnr_reporter.FormType;
+import com.example.rnr_reporter.rnrViewModel;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.ViewModelProvider;
 
 public class SummaryActivity extends AppCompatActivity {
 
     Button submit;
     TextView name, type, description, location, reporter, time, date;
 
+    private rnrViewModel mView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.summary);
+
+        mView = new ViewModelProvider(this).get(rnrViewModel.class);
 
         Toolbar toolbar = findViewById(R.id.topAppBar);
         setSupportActionBar(toolbar);
@@ -48,7 +53,7 @@ public class SummaryActivity extends AppCompatActivity {
         String r = intent.getStringExtra("reporter");
         String tm = intent.getStringExtra("time");
         String dt = intent.getStringExtra("date");
-        formType form = (formType) intent.getSerializableExtra("form");
+        FormType form = (FormType) intent.getSerializableExtra("form");
         name.setText(n);
         type.setText(t);
         description.setText(d);
@@ -57,32 +62,21 @@ public class SummaryActivity extends AppCompatActivity {
         time.setText(tm);
         date.setText(dt);
 
-  /*      try {
-            switch (form) {
-                case INJURY:
-                    try {
-                        dataBase.getDataBase(this).getInjuryDAO().insertInjury(new injuryForm(n, t, d, null, l, r));
-                    } catch(Exception e) {
-                        System.out.println(e);
-                    }
-                    break;
-                case DAMAGE:
-                    dataBase.getDataBase(this).getPropertyDAO().insertProperty(new propertyForm(n, t, d, null, l, r));
-                    break;
-                case SITUATION:
-                    dataBase.getDataBase(this).getSituationDAO().insertSituation(new situationForm(t, d, null, l, r));
-                    break;
-            }
-        } catch(Exception e) {
-            System.out.println(e);
-        } */
-
-      //  Context context = this;
-
         submit = findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                switch(form) {
+                    case INJURY:
+                        mView.insertInjury(new Injury(n, t, d, tm, l, r));
+                        break;
+                    case DAMAGE:
+                        mView.insertProperty(new Property(n, t, d, tm, l, r));
+                        break;
+                    case SITUATION:
+                        mView.insertSituation(new Situation(t, d, tm, l, r));
+                        break;
+                }
                 switchSubmit();
             }
         });

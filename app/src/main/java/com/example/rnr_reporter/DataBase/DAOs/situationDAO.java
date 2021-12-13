@@ -1,5 +1,6 @@
 package com.example.rnr_reporter.DataBase.DAOs;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -11,9 +12,10 @@ import java.util.List;
 
 @Dao
 public interface situationDAO {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert//(onConflict = OnConflictStrategy.REPLACE)
     public void insertSituation(Situation situationForm);
 
-    @Query("SELECT * FROM Injury")
-    List<Situation> getAll();
+    @Query("SELECT * FROM Situation")
+    LiveData<List<Situation>> getAll();
+
 }

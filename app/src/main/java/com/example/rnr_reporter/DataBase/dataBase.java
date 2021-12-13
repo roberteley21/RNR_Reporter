@@ -2,6 +2,7 @@ package com.example.rnr_reporter.DataBase;
 
 import android.content.Context;
 
+import androidx.room.AutoMigration;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
@@ -16,7 +17,7 @@ import com.example.rnr_reporter.DataBase.Entities.Situation;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(version=6, entities={Injury.class, Property.class, Situation.class})
+@Database(version=8, entities={Injury.class, Property.class, Situation.class})//, autoMigrations={@AutoMigration(from=5, to=6)})
 abstract public class dataBase extends RoomDatabase {
     abstract public injuryDAO getInjuryDAO();
     abstract public propertyDAO getPropertyDAO();
@@ -33,6 +34,7 @@ abstract public class dataBase extends RoomDatabase {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             dataBase.class, "dataBase")
+                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }

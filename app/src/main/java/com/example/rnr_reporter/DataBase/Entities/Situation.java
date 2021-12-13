@@ -12,6 +12,7 @@ public class Situation {
     public String type;
     public String description;
     public String time;
+    public String date;
     public String location;
     public String reporter;
     private boolean selected;
@@ -38,6 +39,10 @@ public class Situation {
     public void setTime(String p_time) { this.time = p_time; }
 
     public String getTime() { return this.time; }
+
+    public void setDate(String p_date) { this.date = p_date; }
+
+    public String getDate() { return this.date; }
 
     public void setLocation(String p_location) { this.location = p_location; }
 

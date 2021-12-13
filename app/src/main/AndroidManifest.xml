@@ -31,6 +31,8 @@
             android:name=".Activities.SummaryActivity"/>
         <activity
             android:name=".Activities.SubmissionActivity"/>
+        <activity
+            android:name=".Activities.YourReportsActivity"/>
     </application>
 
 </manifest>

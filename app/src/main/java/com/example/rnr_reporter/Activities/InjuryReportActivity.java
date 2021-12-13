@@ -1,24 +1,20 @@
 package com.example.rnr_reporter.Activities;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.DialogFragment;
 
-import com.example.rnr_reporter.Activities.SummaryActivity;
 import com.example.rnr_reporter.DatePicker;
 import com.example.rnr_reporter.R;
 import com.example.rnr_reporter.TimePicker;
-import com.example.rnr_reporter.formType;
+import com.example.rnr_reporter.FormType;
 
 public class InjuryReportActivity extends AppCompatActivity {
 
@@ -61,7 +57,7 @@ public class InjuryReportActivity extends AppCompatActivity {
         r = reporter.getText().toString();
         tm = time.getText().toString();
         dt = date.getText().toString();
-        formType form = formType.INJURY;
+        FormType form = FormType.INJURY;
         if (TextUtils.isEmpty(name.getText())){
             name.setError("Name is required");
         }

@@ -1,5 +1,5 @@
 package com.example.rnr_reporter;
 
-public enum formType {
+public enum FormType {
     INJURY, DAMAGE, SITUATION;
 }
