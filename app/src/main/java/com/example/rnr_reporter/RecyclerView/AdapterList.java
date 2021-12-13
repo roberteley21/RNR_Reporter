@@ -7,15 +7,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.LiveData;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.rnr_reporter.DataBase.Entities.Injury;
 import com.example.rnr_reporter.DataBase.Entities.Property;
 import com.example.rnr_reporter.DataBase.Entities.Situation;
-import com.example.rnr_reporter.FormType;
 import com.example.rnr_reporter.R;
-import com.example.rnr_reporter.rnrViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +33,7 @@ public class AdapterList extends RecyclerView.Adapter{
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int ViewType) {
         RecyclerView.ViewHolder vh;
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.injury_item_layout, parent, false);
 
         switch (ViewType) {
             case 0:
@@ -73,21 +70,21 @@ public class AdapterList extends RecyclerView.Adapter{
                InjuryViewHolder injuryViewHolder = (InjuryViewHolder)holder;
                Injury mInjury = mAllInjuries.get(position);
                injuryViewHolder.name.setText(mInjury.getName());
-               injuryViewHolder.reportType.setText(mInjury.getType());
+              // injuryViewHolder.reportType.setText(mInjury.getType());
                injuryViewHolder.date.setText(mInjury.getDate());
                injuryViewHolder.description.setText(mInjury.getDescription());
                break;
            case 1:
                PropertyViewHolder propertyViewHolder = (PropertyViewHolder)holder;
                Property mProperty = mAllProperties.get(position - mAllInjuries.size());
-               propertyViewHolder.reportType.setText(mProperty.getType());
+              // propertyViewHolder.reportType.setText(mProperty.getType());
                propertyViewHolder.date.setText(mProperty.getDate());
                propertyViewHolder.description.setText(mProperty.getDescription());
                break;
            case 2:
                SituationViewHolder situationViewHolder = (SituationViewHolder)holder;
                Situation mSituation = mAllSituations.get(position - (mAllInjuries.size() + mAllProperties.size()));
-               situationViewHolder.reportType.setText(mSituation.getType());
+             //  situationViewHolder.reportType.setText(mSituation.getType());
                situationViewHolder.date.setText(mSituation.getDate());
                situationViewHolder.description.setText(mSituation.getDescription());
                break;
@@ -117,7 +114,7 @@ public class AdapterList extends RecyclerView.Adapter{
 
     public class InjuryViewHolder extends RecyclerView.ViewHolder {
         public TextView name;
-        public TextView reportType;
+      //  public TextView reportType;
         public TextView date;
         public TextView description;
         public View lyt_parent;
@@ -125,7 +122,7 @@ public class AdapterList extends RecyclerView.Adapter{
         public InjuryViewHolder(View v) {
             super(v);
             name = v.findViewById(R.id.name);
-            reportType = v.findViewById(R.id.reportType);
+            //reportType = v.findViewById(R.id.reportType);
             date = v.findViewById(R.id.date);
             description = v.findViewById(R.id.description);
             lyt_parent = v.findViewById(R.id.lyt_parent);
@@ -133,14 +130,14 @@ public class AdapterList extends RecyclerView.Adapter{
     }
 
     public class PropertyViewHolder extends RecyclerView.ViewHolder {
-        public TextView reportType;
+       // public TextView reportType;
         public TextView date;
         public TextView description;
         public View lyt_parent;
 
         public PropertyViewHolder(View v) {
             super(v);
-            reportType = v.findViewById(R.id.reportType);
+            //reportType = v.findViewById(R.id.reportType);
             date = v.findViewById(R.id.date);
             description = v.findViewById(R.id.description);
             lyt_parent = v.findViewById(R.id.lyt_parent);
@@ -148,14 +145,14 @@ public class AdapterList extends RecyclerView.Adapter{
     }
 
     public class SituationViewHolder extends RecyclerView.ViewHolder {
-        public TextView reportType;
+       // public TextView reportType;
         public TextView date;
         public TextView description;
         public View lyt_parent;
 
         public SituationViewHolder(View v) {
             super(v);
-            reportType = v.findViewById(R.id.reportType);
+          //  reportType = v.findViewById(R.id.reportType);
             date = v.findViewById(R.id.date);
             description = v.findViewById(R.id.description);
             lyt_parent = v.findViewById(R.id.lyt_parent);
