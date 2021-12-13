@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private void setNavigationDrawer() {
         dLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         NavigationView navView = (NavigationView) findViewById(R.id.nav_view);
+        navView.bringToFront();
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
