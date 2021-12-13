@@ -20,11 +20,12 @@ public class Injury {
 
     public Injury() { this.selected = false; }
 
-    public Injury(String p_name, String p_type, String p_description, String p_time, String p_location, String p_reporter){
+    public Injury(String p_name, String p_type, String p_description, String p_time, String p_date, String p_location, String p_reporter){
         this.name = p_name;
         this.type = p_type;
         this.description = p_description;
         this.time = p_time;
+        this.date = p_date;
         this.location = p_location;this.reporter = p_reporter;
         this.selected = false;
     }

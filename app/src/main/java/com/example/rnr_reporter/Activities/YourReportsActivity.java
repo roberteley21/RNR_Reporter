@@ -75,6 +75,14 @@ public class YourReportsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         AdapterList adapter = new AdapterList(this);
+
+        adapter.setOnItemClickListener(new AdapterList.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, Injury obj, int position) {
+
+            }
+        });
+
         recyclerView.setAdapter(adapter);
 
 

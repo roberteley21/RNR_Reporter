@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(switchActivityIntent);
     }
     private void switchProperty() {
-        Intent switchActivityIntent = new Intent(this, PropertyDamageActivity.class);
+        Intent switchActivityIntent = new Intent(this, YourReportsActivity.class);//PropertyDamageActivity.class);
         startActivity(switchActivityIntent);
     }
     private void switchDangerous() {

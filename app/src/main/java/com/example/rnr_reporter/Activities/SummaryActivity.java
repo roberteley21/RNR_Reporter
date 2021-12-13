@@ -68,13 +68,13 @@ public class SummaryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 switch(form) {
                     case INJURY:
-                        mView.insertInjury(new Injury(n, t, d, tm, l, r));
+                        mView.insertInjury(new Injury(n, t, d, tm, dt, l, r));
                         break;
                     case DAMAGE:
-                        mView.insertProperty(new Property(n, t, d, tm, l, r));
+                        mView.insertProperty(new Property(n, t, d, tm, dt, l, r));
                         break;
                     case SITUATION:
-                        mView.insertSituation(new Situation(t, d, tm, l, r));
+                        mView.insertSituation(new Situation(t, d, tm, dt, l, r));
                         break;
                 }
                 switchSubmit();

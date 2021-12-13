@@ -17,7 +17,7 @@ import com.example.rnr_reporter.DataBase.Entities.Situation;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(version=8, entities={Injury.class, Property.class, Situation.class})//, autoMigrations={@AutoMigration(from=5, to=6)})
+@Database(version=8, entities={Injury.class, Property.class, Situation.class})
 abstract public class dataBase extends RoomDatabase {
     abstract public injuryDAO getInjuryDAO();
     abstract public propertyDAO getPropertyDAO();

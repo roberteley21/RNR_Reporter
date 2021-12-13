@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.rnr_reporter.DataBase.Entities.Injury;
@@ -28,6 +29,8 @@ public class AdapterList extends RecyclerView.Adapter{
     public AdapterList(Context context) {
         mContext = context;
     }
+
+    private OnItemClickListener mOnItemClickListener;
 
     @NonNull
     @Override
@@ -70,21 +73,19 @@ public class AdapterList extends RecyclerView.Adapter{
                InjuryViewHolder injuryViewHolder = (InjuryViewHolder)holder;
                Injury mInjury = mAllInjuries.get(position);
                injuryViewHolder.name.setText(mInjury.getName());
-              // injuryViewHolder.reportType.setText(mInjury.getType());
                injuryViewHolder.date.setText(mInjury.getDate());
                injuryViewHolder.description.setText(mInjury.getDescription());
                break;
            case 1:
                PropertyViewHolder propertyViewHolder = (PropertyViewHolder)holder;
                Property mProperty = mAllProperties.get(position - mAllInjuries.size());
-              // propertyViewHolder.reportType.setText(mProperty.getType());
+               propertyViewHolder.name.setText(mProperty.getPropertyDamaged());
                propertyViewHolder.date.setText(mProperty.getDate());
                propertyViewHolder.description.setText(mProperty.getDescription());
                break;
            case 2:
                SituationViewHolder situationViewHolder = (SituationViewHolder)holder;
                Situation mSituation = mAllSituations.get(position - (mAllInjuries.size() + mAllProperties.size()));
-             //  situationViewHolder.reportType.setText(mSituation.getType());
                situationViewHolder.date.setText(mSituation.getDate());
                situationViewHolder.description.setText(mSituation.getDescription());
                break;
@@ -114,7 +115,6 @@ public class AdapterList extends RecyclerView.Adapter{
 
     public class InjuryViewHolder extends RecyclerView.ViewHolder {
         public TextView name;
-      //  public TextView reportType;
         public TextView date;
         public TextView description;
         public View lyt_parent;
@@ -122,41 +122,53 @@ public class AdapterList extends RecyclerView.Adapter{
         public InjuryViewHolder(View v) {
             super(v);
             name = v.findViewById(R.id.name);
-            //reportType = v.findViewById(R.id.reportType);
             date = v.findViewById(R.id.date);
             description = v.findViewById(R.id.description);
-            lyt_parent = v.findViewById(R.id.lyt_parent);
+            lyt_parent = (CoordinatorLayout)v.findViewById(R.id.lyt_parent);
+
+        /*    lyt_parent.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                }
+            }); */
         }
     }
 
     public class PropertyViewHolder extends RecyclerView.ViewHolder {
-       // public TextView reportType;
+        public TextView name;
         public TextView date;
         public TextView description;
         public View lyt_parent;
 
         public PropertyViewHolder(View v) {
             super(v);
-            //reportType = v.findViewById(R.id.reportType);
+            name = v.findViewById(R.id.name);
             date = v.findViewById(R.id.date);
             description = v.findViewById(R.id.description);
             lyt_parent = v.findViewById(R.id.lyt_parent);
         }
+
     }
 
     public class SituationViewHolder extends RecyclerView.ViewHolder {
-       // public TextView reportType;
         public TextView date;
         public TextView description;
         public View lyt_parent;
 
         public SituationViewHolder(View v) {
             super(v);
-          //  reportType = v.findViewById(R.id.reportType);
             date = v.findViewById(R.id.date);
             description = v.findViewById(R.id.description);
             lyt_parent = v.findViewById(R.id.lyt_parent);
         }
+    }
+
+   public interface OnItemClickListener {
+        void onItemClick(View view, Injury obj, int position);
+    }
+
+    public void setOnItemClickListener(final OnItemClickListener p_itemClickListener) {
+        this.mOnItemClickListener = p_itemClickListener;
     }
 
 }

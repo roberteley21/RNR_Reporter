@@ -19,10 +19,11 @@ public class Situation {
 
     public Situation() { selected = false; }
 
-    public Situation(String p_type, String p_description, String p_time, String p_location, String p_reporter){
+    public Situation(String p_type, String p_description, String p_time, String p_date, String p_location, String p_reporter){
         this.type = p_type;
         this.description = p_description;
         this.time = p_time;
+        this.date = p_date;
         this.location = p_location;
         this.reporter = p_reporter;
         this.selected = false;
