@@ -36,17 +36,19 @@ public class AdapterList extends RecyclerView.Adapter{
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int ViewType) {
         RecyclerView.ViewHolder vh;
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.injury_item_layout, parent, false);
 
         switch (ViewType) {
             case 0:
-                vh = new InjuryViewHolder(itemView);
+                View injuryItemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.injury_item_layout, parent, false);
+                vh = new InjuryViewHolder(injuryItemView);
                 break;
             case 1:
-                vh = new PropertyViewHolder(itemView);
+                View propertyItemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.property_item_layout, parent, false);
+                vh = new PropertyViewHolder(propertyItemView);
                 break;
             default:
-                vh = new SituationViewHolder(itemView);
+                View situationItemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.situation_item_layout, parent, false);
+                vh = new SituationViewHolder(situationItemView);
                 break;
         }
         return vh;
