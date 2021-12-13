@@ -46,15 +46,24 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
+    <FrameLayout android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top"
         android:layout_weight="1"
-        android:paddingTop="5dp"
-        app:srcCompat="@drawable/checkmark" />
+        android:layout_marginTop="5dp">
 
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/orange" />
 
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:text="PD" />
+    </FrameLayout>
 
 </LinearLayout>
